@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamir Abdul Aziz - Resume 2026</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .resume-container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+        }
+        
+        /* Header Section */
+        .header {
+            grid-column: 1 / -1;
+            background: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 34px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        
+        .header-content .title {
+            color: #5dade2;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .header-content .summary {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ecf0f1;
+            max-width: 700px;
+        }
+        
+        .header-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #5dade2;
+        }
+        
+        .header-photo img {
+            width: 130%;
+            height: 130%;
+            object-fit: cover;
+            object-position: center top;
+            margin-left: -15%;
+            margin-top: -5%;
+        }
+        
+        /* Contact Bar */
+        .contact-bar {
+            grid-column: 1 / -1;
+            background: #ecf0f1;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item .icon {
+            color: #2c3e50;
+        }
+        
+        /* Main Content Area */
+        .left-column {
+            padding: 20px 25px;
+            border-right: 1px solid #ecf0f1;
+        }
+        
+        .right-column {
+            padding: 20px 25px;
+            background: #f8f9fa;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            color: #16a085;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #16a085;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Work Experience */
+        .job {
+            margin-bottom: 18px;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 13px;
+            color: #2c3e50;
+        }
+        
+        .company {
+            font-weight: bold;
+            color: #16a085;
+        }
+        
+        .job-meta {
+            color: #16a085;
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+        
+        .job-subtitle {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c3e50;
+            margin: 10px 0 8px 0;
+        }
+        
+        .job ul, .achievement-card ul {
+            padding-left: 0;
+            margin-top: 8px;
+            list-style: none;
+        }
+        
+        .job li, .achievement-card li {
+            margin-bottom: 8px;
+            font-size: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .achievement-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #16a085;
+            font-size: 14px;
+        }
+        
+        .highlight {
+            color: #16a085;
+            font-weight: 600;
+        }
+        
+        .metric {
+            color: #16a085;
+            font-weight: 600;
+        }
+        
+        .emphasis {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .emoji {
+            font-size: 11px;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-tag {
+            background: white;
+            border: 1px solid #16a085;
+            color: #2c3e50;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        
+        /* Awards */
+        .award {
+            margin-bottom: 12px;
+        }
+        
+        .award-title {
+            font-weight: 500;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+        
+        .award-desc {
+            font-size: 11px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Interests */
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .interest-tag {
+            background: white;
+            border: 1px solid #bdc3c7;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        
+        /* Side Projects */
+        .project {
+            margin-bottom: 10px;
+        }
+        
+        .project-title {
+            font-weight: 500;
+            font-size: 12px;
+            color: #16a085;
+        }
+        
+        .project-desc {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        /* Leadership */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .leadership-item {
+            background: #e8f6f3;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .leadership-item strong {
+            display: block;
+            color: #16a085;
+            font-size: 10px;
+            margin-bottom: 3px;
+        }
+        
+        .leadership-item span {
+            font-size: 8px;
+            color: #666;
+        }
+        
+        a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .demo-link {
+            font-size: 11px;
+            color: #16a085;
+            display: inline-block;
+            margin-top: 5px;
+            margin-right: 12px;
+        }
+        
+        .icon-blue { color: #3498db; }
+        .icon-green { color: #27ae60; }
+        .icon-orange { color: #f39c12; }
+        .icon-purple { color: #9b59b6; }
+        .icon-red { color: #e74c3c; }
+        .icon-teal { color: #16a085; }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1>Shamir Abdul Aziz</h1>
+                <div class="title">Principal Product Manager | Core AI | Level 65, IC5</div>
+                <div style="color:#5dade2; font-size:13px; margin-bottom:10px;">Lead PM on SRE Agent team | Agentic coding champion</div>
+                <div class="summary">
+                    <strong style="color:#5dade2;">24 Years in Technology (20+ at Microsoft)</strong><br>
+                    <span style="letter-spacing:1px;"><i class="bi bi-rocket-takeoff-fill" style="color:#e74c3c;"></i> Innovator | <i class="bi bi-bullseye" style="color:#f39c12;"></i> Go-Getter | <i class="bi bi-people-fill" style="color:#3498db;"></i> Collaborator | <i class="bi bi-graph-up-arrow" style="color:#2ecc71;"></i> Growth Hacker</span><br><br>
+                    A proven leader with a rich portfolio across Supportability, Development, and Product Management. 
+                    Passionate about product quality, customer experience, and supportability excellence. Transforms prototypes 
+                    into enterprise products. Drives adoption through coalition-building, relentless execution, and a deep 
+                    understanding of what makes products successful and supportable at scale.
+                </div>
+            </div>
+            <div class="header-photo">
+                <img src="shamir_photo.png" alt="Shamir Abdul Aziz">
+            </div>
+        </div>
+        
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="contact-item">
+                <i class="bi bi-envelope-fill icon-red"></i> saziz@microsoft.com
+            </div>
+            <div class="contact-item">
+                <i class="bi bi-telephone-fill icon-green"></i> 2067394635
+            </div>
+            <div class="contact-item">
+                <i class="bi bi-geo-alt-fill icon-blue"></i> Redmond, WA
+            </div>
+            <div class="contact-item">
+                <i class="bi bi-linkedin icon-blue"></i> <a href="https://www.linkedin.com/in/shamir-abdul-aziz-5a071622/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <i class="bi bi-github icon-purple"></i> <a href="https://github.com/meetshamir" target="_blank">GitHub</a>
+            </div>
+            <div class="contact-item">
+                <i class="bi bi-building icon-teal"></i> <a href="https://github.com/enterprises/microsoft" target="_blank">GitHub Enterprise</a>
+            </div>
+        </div>
+        
+        <!-- Horizontal Career Timeline -->
+        <div style="grid-column: 1 / -1; background:linear-gradient(135deg, #1a252f 0%, #2c3e50 100%); padding:14px 30px; border-top:3px solid #16a085;">
+            <div style="font-size:12px; font-weight:600; color:#ecf0f1; margin-bottom:8px;"><i class="bi bi-clock-history" style="color:#16a085;"></i> CAREER TIMELINE</div>
+            <div style="position:relative; height:80px; margin:0 60px 0 50px;">
+                <!-- Timeline Line - Single continuous gradient -->
+                <div style="position:absolute; top:38px; left:0; right:0; height:4px; background:linear-gradient(to right, #7f8c8d 0%, #95a5a6 10%, #3498db 15%, #2980b9 45%, #9b59b6 55%, #8e44ad 75%, #16a085 90%, #1abc9c 100%); border-radius:2px;"></div>
+                
+                <!-- 2002 - Developer (above) -->
+                <div style="position:absolute; left:0%; text-align:center; transform:translateX(-50%);">
+                    <div style="font-size:10px; color:#ecf0f1;">Developer</div>
+                    <div style="font-size:9px; color:#7f8c8d;">2002</div>
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #95a5a6; border-radius:50%; margin:3px auto;"></div>
+                </div>
+                
+                <!-- 2004 - Consultant (below) -->
+                <div style="position:absolute; left:10%; text-align:center; transform:translateX(-50%); top:34px;">
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #95a5a6; border-radius:50%; margin:0 auto 3px auto;"></div>
+                    <div style="font-size:9px; color:#7f8c8d;">2004</div>
+                    <div style="font-size:10px; color:#ecf0f1;">Consultant</div>
+                </div>
+                
+                <!-- 2005 - MS Start with Logo (above: Support Eng & year, below: Microsoft) -->
+                <div style="position:absolute; left:18%; text-align:center; transform:translateX(-50%);">
+                    <div style="font-size:10px; color:#ecf0f1; font-weight:600;">Support Engineer</div>
+                    <div style="font-size:9px; color:#7f8c8d;">2005</div>
+                    <div style="width:14px; height:14px; background:#fff; border-radius:50%; margin:2px auto; display:flex; align-items:center; justify-content:center; box-shadow:0 0 8px rgba(255,255,255,0.5);">
+                        <svg width="8" height="8" viewBox="0 0 21 21"><rect x="1" y="1" width="9" height="9" fill="#f25022"/><rect x="11" y="1" width="9" height="9" fill="#7fba00"/><rect x="1" y="11" width="9" height="9" fill="#00a4ef"/><rect x="11" y="11" width="9" height="9" fill="#ffb900"/></svg>
+                    </div>
+                </div>
+                
+                <!-- Microsoft label below the dot -->
+                <div style="position:absolute; left:18%; text-align:center; transform:translateX(-50%); top:58px;">
+                    <div style="font-size:10px; color:#fff; font-weight:600; background:linear-gradient(135deg, #f25022, #7fba00, #00a4ef, #ffb900); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Microsoft</div>
+                </div>
+                
+                <!-- 2007 - Tech Lead (below) -->
+                <div style="position:absolute; left:30%; text-align:center; transform:translateX(-50%); top:34px;">
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #3498db; border-radius:50%; margin:0 auto 3px auto;"></div>
+                    <div style="font-size:9px; color:#7f8c8d;">2007</div>
+                    <div style="font-size:10px; color:#ecf0f1;">Tech Lead</div>
+                </div>
+                
+                <!-- 2011 - Escalation Eng (above) -->
+                <div style="position:absolute; left:45%; text-align:center; transform:translateX(-50%);">
+                    <div style="font-size:10px; color:#ecf0f1;">Escalation Eng</div>
+                    <div style="font-size:9px; color:#7f8c8d;">2011</div>
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #2980b9; border-radius:50%; margin:3px auto;"></div>
+                </div>
+                
+                <!-- 2014 - Sr Escalation (below) -->
+                <div style="position:absolute; left:58%; text-align:center; transform:translateX(-50%); top:34px;">
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #9b59b6; border-radius:50%; margin:0 auto 3px auto;"></div>
+                    <div style="font-size:9px; color:#7f8c8d;">2014</div>
+                    <div style="font-size:10px; color:#ecf0f1;">Sr Escalation</div>
+                </div>
+                
+                <!-- 2016 - Supportability PM (above) -->
+                <div style="position:absolute; left:72%; text-align:center; transform:translateX(-50%);">
+                    <div style="font-size:10px; color:#ecf0f1;">Supportability PM</div>
+                    <div style="font-size:9px; color:#7f8c8d;">2016</div>
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #8e44ad; border-radius:50%; margin:3px auto;"></div>
+                </div>
+                
+                <!-- 2022 - Senior PM (below) -->
+                <div style="position:absolute; left:87%; text-align:center; transform:translateX(-50%); top:34px;">
+                    <div style="width:12px; height:12px; background:#fff; border:2px solid #16a085; border-radius:50%; margin:0 auto 3px auto;"></div>
+                    <div style="font-size:9px; color:#7f8c8d;">2022</div>
+                    <div style="font-size:10px; color:#ecf0f1;">Senior PM</div>
+                </div>
+                
+                <!-- 2024 - Principal PM (above) -->
+                <div style="position:absolute; left:100%; text-align:center; transform:translateX(-50%);">
+                    <div style="font-size:11px; color:#1abc9c; font-weight:600; white-space:nowrap;">Principal PM</div>
+                    <div style="font-size:9px; color:#1abc9c;">2024</div>
+                    <div style="width:14px; height:14px; background:#fff; border:3px solid #1abc9c; border-radius:50%; margin:2px auto; box-shadow:0 0 8px rgba(26,188,156,0.5);"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Left Column -->
+        <div class="left-column">
+            <h2 class="section-header">KEY INNOVATIONS & IMPACT <i class="bi bi-lightning-charge-fill icon-orange"></i></h2>
+            <p style="font-size:11px; color:#666; margin-bottom:15px;">2022 - Present | Microsoft</p>
+            
+            <!-- SRE Agent Growth Story -->
+            <div class="achievement-card" style="background:#e8f6f3; padding:14px; border-radius:8px; margin-bottom:15px; border-left:4px solid #16a085;">
+                <div class="job-subtitle" style="margin:0 0 10px 0;"><i class="bi bi-graph-up-arrow icon-green"></i> SRE Agent – Growth & Vision Transformation</div>
+                <ul>
+                    <li>Led growth strategy that onboarded <span class="metric">30 engineering teams</span> in just 2 months</li>
+                    <li>Transformed product vision from "Azure troubleshooting tool" to <span class="emphasis">"AI orchestration agent platform"</span></li>
+                    <li>Built prototypes (<span class="highlight">SRE Agent Microsoft Portal</span>, <span class="highlight">IcM Analyzer Agent</span>) that were adopted by engineering</li>
+                    <li>Built coalition through relentless pursuit – presenting to leaders, driving alignment, championing the vision</li>
+                    <li>Delivered demos, workshops, and hands-on enablement to accelerate adoption</li>
+                    <li>Today's 1P Metrics: <span class="metric">1,189 agents</span> | <span class="metric">104 service groups</span> – driven by early momentum</li>
+                    <li>Impact: Automatically mitigates <span class="metric">25K incidents</span>, enriches <span class="metric">110K incidents</span>, saved <span class="metric">30K engineering hours</span> in 8 months</li>
+                </ul>
+            </div>
+            
+            <!-- EBC - Agentic DevOps Speaker -->
+            <div class="achievement-card" style="background:#fff3cd; padding:14px; border-radius:8px; margin-bottom:15px; border-left:4px solid #f39c12;">
+                <div class="job-subtitle" style="margin:0 0 10px 0;"><i class="bi bi-mic-fill icon-orange"></i> Executive Briefing Center (EBC) – Agentic DevOps</div>
+                <ul>
+                    <li>Speaker since <span class="metric">Jan 2026</span> – helping enterprise customers adopt <span class="emphasis">SSD, GitHub lifecycle, and SRE Agent</span></li>
+                    <li>Customers engaged for POC or contracts: <span class="highlight">Alaska Airlines</span>, <span class="highlight">American Airlines</span>, <span class="highlight">Fitch</span>, <span class="highlight">Presidio</span></li>
+                </ul>
+            </div>
+            
+            <!-- SRE Agent Microsoft Portal -->
+            <div class="achievement-card" style="background:#fff; padding:14px; border-radius:8px; margin-bottom:15px; border:1px solid #e0e0e0;">
+                <div class="job-subtitle" style="margin:0 0 10px 0;"><i class="bi bi-bar-chart-fill icon-blue"></i> SRE Agent Microsoft Portal</div>
+                <ul>
+                    <li>Developed Engineering Toil Analysis Portal that evolved into <span class="emphasis">SRE Agent Microsoft Portal</span></li>
+                    <li>Identified <span class="highlight">TAM, Total Addressable Market</span>, automation opportunities, and noise reduction potential</li>
+                    <li>Built automatic custom agents for each incident class – enabling <span class="highlight">1-click deploy</span> by learning from team patterns</li>
+                </ul>
+                <div style="margin-top:10px;">
+                    <a class="demo-link" href="https://microsoft.sharepoint.com/:v:/r/teams/DevDivCentral/DevDiv%20Video%20Library/Demos/SRE%20Agent/SRE%20Agent%20Microsoft%20Portal%20-%201P/SRE%20Agent%20Microsoft%20Portal%20Sizzle%20Video.mp4?csf=1&web=1&e=CT8eqo" target="_blank"><i class="bi bi-play-circle-fill icon-green"></i> Incident Scorecard</a>
+                    <a class="demo-link" href="https://microsoft.sharepoint.com/:v:/r/teams/DevDivCentral/DevDiv%20Video%20Library/Demos/SRE%20Agent/SRE%20Agent%20Microsoft%20Portal%20-%201P/SRE%20Agent%20Portal%20-%20Agent%20Metrics%20Sizzle%20Video.mp4?csf=1&web=1&e=qWS1LX" target="_blank"><i class="bi bi-play-circle-fill icon-green"></i> Agent Metrics</a>
+                    <span style="font-size:11px; font-style:italic; color:#888;">| Videos created by DemoGenie</span>
+                </div>
+            </div>
+            
+            <!-- IcM Analyzer Agent -->
+            <div class="achievement-card" style="background:#fff; padding:14px; border-radius:8px; margin-bottom:15px; border:1px solid #e0e0e0;">
+                <div class="job-subtitle" style="margin:0 0 10px 0;"><i class="bi bi-robot icon-purple"></i> IcM Analyzer Agent – Agentic AI</div>
+                <ul>
+                    <li>Built an <span class="highlight">agentic AI application</span> for IcM (Incident Management) analysis</li>
+                    <li>Prototype was adopted into the SRE Agent product</li>
+                    <li>Automatically summarizes incidents, identifies trends, root causes, and impacted regions</li>
+                    <li>Generates automated reports with impact scoring, metrics (TTM, outliers), and recommendations</li>
+                    <li>Matches or surpasses traditional vendor reports – enabling faster, data-driven decisions</li>
+                </ul>
+                <div style="margin-top:10px;">
+                    <a class="demo-link" href="https://onedrive.cloud.microsoft/:v:/a@62v7py9u/S/IQA1ubNxXmw5Q7UukIUine7CARLlwDAXdCWWPLl6mD7QHuo" target="_blank"><i class="bi bi-play-circle-fill icon-green"></i> IcM Analyzer Demo</a>
+                    <a class="demo-link" href="https://github.com/meetshamir/icm-automation-analyzer" target="_blank"><i class="bi bi-github icon-purple"></i> GitHub</a>
+                </div>
+            </div>
+            
+            <!-- CaseAI -->
+            <div class="achievement-card" style="background:#fff; padding:14px; border-radius:8px; margin-bottom:15px; border:1px solid #e0e0e0;">
+                <div class="job-subtitle" style="margin:0 0 10px 0;"><i class="bi bi-rocket-takeoff-fill icon-orange"></i> CaseAI – Prototype → Enterprise Product</div>
+                <ul>
+                    <li>Architected <span class="highlight">CaseAI</span>, an AI-powered case analysis tool</li>
+                    <li>Started as personal prototype, scaled to enterprise adoption across Microsoft Engineering & Supportability</li>
+                    <li>Impact: <span class="metric">1M cases analyzed</span> across <span class="metric">150+ Microsoft products</span> in the last 3 years</li>
+                    <li>Transformed case analysis workflows, significantly reducing time to identify trends and issues</li>
+                    <li>Automatically creates supportability artifacts: self-help docs, diagnostics, and scoping questions</li>
+                </ul>
+                <div style="margin-top:10px;">
+                    <a class="demo-link" href="https://onedrive.cloud.microsoft/:v:/a@62v7py9u/S/IQDIJyRBRcBySZAZ1mtMqutOAVGYm9FphaPnDDx4K4Oyu0Y" target="_blank"><i class="bi bi-play-circle-fill icon-green"></i> Engineering Insights</a>
+                    <a class="demo-link" href="https://onedrive.cloud.microsoft/:v:/a@62v7py9u/S/IQD6eAKZwwuyRZ1r13sVv520AVTSrmriiSks4ppXs72-Hzs" target="_blank"><i class="bi bi-play-circle-fill icon-green"></i> Case Analysis</a>
+                </div>
+            </div>
+            
+            <!-- Leadership Roles -->
+            <div class="achievement-card" style="background:#f8f9fa; padding:14px; border-radius:8px; margin-bottom:15px;">
+                <div class="job-subtitle" style="margin:0 0 10px 0;"><i class="bi bi-person-badge-fill icon-teal"></i> Leadership Roles</div>
+                <div style="background:#e8f6f3; padding:12px; border-radius:6px; margin-bottom:10px;">
+                    <div style="font-weight:600; font-size:13px; color:#16a085; margin-bottom:4px;">Supportability Leader – DevDiv</div>
+                    <div style="font-size:13px; color:#555; line-height:1.5;">Lead supportability fundamentals and planning for the entire DevDiv org. Collaborate with Engineering, CSS, and CXP orgs. Help plan forecasts, targets, and KPIs. Create execution plans and work with engineering leaders to deliver. Lead reporting and reviews with <span class="highlight">Scott Guthrie</span> and <span class="highlight">Billy Anders</span>.</div>
+                </div>
+                <div style="background:#e8f6f3; padding:12px; border-radius:6px;">
+                    <div style="font-weight:600; font-size:13px; color:#16a085; margin-bottom:4px;">Acting Lead – Applens</div>
+                    <div style="font-size:13px; color:#555; line-height:1.5;">Led a team of 3 engineers on Azure diagnostics platform. Assisted manager with work management, team coordination, and performance evaluations. Drove sprint planning, prioritization, and stakeholder alignment.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="right-column">
+            <h2 class="section-header">SKILLS <i class="bi bi-tools icon-blue"></i></h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
+                <div>
+                    <div style="font-size:11px; color:#16a085; font-weight:600; margin-bottom:2px;">AI & Agents</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:3px;">
+                        <span style="background:linear-gradient(135deg, #e8f8f5, #d1f2eb); border:1px solid #16a085; padding:2px 6px; border-radius:10px; font-size:11px;">Agentic DevOps</span>
+                        <span style="background:linear-gradient(135deg, #e8f8f5, #d1f2eb); border:1px solid #16a085; padding:2px 6px; border-radius:10px; font-size:11px;">Copilot SDK</span>
+                        <span style="background:linear-gradient(135deg, #e8f8f5, #d1f2eb); border:1px solid #16a085; padding:2px 6px; border-radius:10px; font-size:11px;">Semantic Kernel</span>
+                        <span style="background:linear-gradient(135deg, #e8f8f5, #d1f2eb); border:1px solid #16a085; padding:2px 6px; border-radius:10px; font-size:11px;">Foundry</span>
+                        <span style="background:linear-gradient(135deg, #e8f8f5, #d1f2eb); border:1px solid #16a085; padding:2px 6px; border-radius:10px; font-size:11px;">Speckit</span>
+                        <span style="background:linear-gradient(135deg, #e8f8f5, #d1f2eb); border:1px solid #16a085; padding:2px 6px; border-radius:10px; font-size:11px;">AI Toolkit</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size:11px; color:#3498db; font-weight:600; margin-bottom:2px;">Azure</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:3px;">
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">OpenAI</span>
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">Cognitive Svc</span>
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">TTS</span>
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">App Service</span>
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">Container Apps</span>
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">CosmosDB</span>
+                        <span style="background:linear-gradient(135deg, #ebf5fb, #d4e6f1); border:1px solid #3498db; padding:2px 6px; border-radius:10px; font-size:11px;">SQL</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size:11px; color:#9b59b6; font-weight:600; margin-bottom:2px;">DevTools & Languages</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:3px;">
+                        <span style="background:linear-gradient(135deg, #f5eef8, #e8daef); border:1px solid #9b59b6; padding:2px 6px; border-radius:10px; font-size:11px;">VSCode</span>
+                        <span style="background:linear-gradient(135deg, #f5eef8, #e8daef); border:1px solid #9b59b6; padding:2px 6px; border-radius:10px; font-size:11px;">GitHub</span>
+                        <span style="background:linear-gradient(135deg, #f5eef8, #e8daef); border:1px solid #9b59b6; padding:2px 6px; border-radius:10px; font-size:11px;">Python</span>
+                        <span style="background:linear-gradient(135deg, #f5eef8, #e8daef); border:1px solid #9b59b6; padding:2px 6px; border-radius:10px; font-size:11px;">C#</span>
+                        <span style="background:linear-gradient(135deg, #f5eef8, #e8daef); border:1px solid #9b59b6; padding:2px 6px; border-radius:10px; font-size:11px;">HTML/CSS/JS</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size:11px; color:#f39c12; font-weight:600; margin-bottom:2px;">Data & Automation</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:3px;">
+                        <span style="background:linear-gradient(135deg, #fef9e7, #fcf3cf); border:1px solid #f39c12; padding:2px 6px; border-radius:10px; font-size:11px;">KQL</span>
+                        <span style="background:linear-gradient(135deg, #fef9e7, #fcf3cf); border:1px solid #f39c12; padding:2px 6px; border-radius:10px; font-size:11px;">PowerBI</span>
+                        <span style="background:linear-gradient(135deg, #fef9e7, #fcf3cf); border:1px solid #f39c12; padding:2px 6px; border-radius:10px; font-size:11px;">DAX</span>
+                        <span style="background:linear-gradient(135deg, #fef9e7, #fcf3cf); border:1px solid #f39c12; padding:2px 6px; border-radius:10px; font-size:11px;">Power Automate</span>
+                        <span style="background:linear-gradient(135deg, #fef9e7, #fcf3cf); border:1px solid #f39c12; padding:2px 6px; border-radius:10px; font-size:11px;">Logic App</span>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size:11px; color:#5d6d7e; margin-bottom:10px;"><strong>Internals:</strong> Windows & Browser Internals</div>
+            
+            <h2 class="section-header">SIDE PROJECTS <i class="bi bi-lightbulb-fill icon-orange"></i></h2>
+            
+            <!-- Featured Project: DemoGenie -->
+            <div style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding:14px; border-radius:8px; margin-bottom:15px; color:white;">
+                <div style="font-weight:600; font-size:13px; margin-bottom:8px;">
+                    <i class="bi bi-magic"></i> DemoGenie – AI Demo Video Creator
+                </div>
+                <ul style="font-size:13px; padding-left:0; margin:0; list-style:none;">
+                    <li style="margin-bottom:5px; padding-left:18px;">▸ Screenshots → cinematic demo videos in minutes using natural language</li>
+                    <li style="margin-bottom:5px; padding-left:18px;">▸ Powered by Azure AI (GPT-4.1, GPT-4o, Vision 4.0, Neural TTS)</li>
+                    <li style="margin-bottom:5px; padding-left:18px;">▸ 30+ visual effects, voice cloning, fully editable output</li>
+                    <li style="padding-left:18px;">▸ Costs under $0.15 per 3-minute demo</li>
+                </ul>
+                <div style="margin-top:10px; font-size:11px;">
+                    <a style="color:#fff; text-decoration:underline;" href="https://onedrive.cloud.microsoft/:v:/a@62v7py9u/S/IQCCuK_QVnacQ5Q2cS7toUBCAXFxJtA8EWSItaFOLWqtfQQ?e=fXs7SS" target="_blank"><i class="bi bi-play-circle-fill"></i> Watch Demo</a> &nbsp;|&nbsp;
+                    <a style="color:#fff; text-decoration:underline;" href="https://github.com/saziz_microsoft/demogenie" target="_blank"><i class="bi bi-github"></i> GitHub (Enterprise)</a>
+                </div>
+            </div>
+            
+            <!-- Featured Newsletter - Musings -->
+            <div style="background:linear-gradient(135deg, #f39c12 0%, #e74c3c 100%); padding:12px; border-radius:8px; margin-bottom:15px; color:white;">
+                <div style="font-weight:600; font-size:13px; margin-bottom:6px;">
+                    <i class="bi bi-newspaper"></i> Musings of an AI PM
+                </div>
+                <div style="font-size:13px; margin-bottom:6px;">Insights on AI, Product Management, and building products that matter.</div>
+                <a style="color:#fff; text-decoration:underline; font-size:11px; font-weight:500;" href="https://www.linkedin.com/newsletters/7406066302014070784/" target="_blank"><i class="bi bi-arrow-right-circle-fill"></i> Subscribe on LinkedIn</a>
+            </div>
+            
+            <div class="project">
+                <a class="project-title" href="https://github.com/meetshamir/dj-genie" target="_blank"><i class="bi bi-music-note-beamed icon-purple"></i> DJ-Genie</a>
+                <div class="project-desc">AI-powered Video DJ Playlist Creator with Azure OpenAI voice</div>
+            </div>
+            <div class="project">
+                <a class="project-title" href="https://github.com/meetshamir/ai-pm-toolkit" target="_blank"><i class="bi bi-tools icon-blue"></i> AI-PM-Toolkit</a>
+                <div class="project-desc">AI prompts and agents for Product Managers - vibe coding</div>
+            </div>
+            <div class="project">
+                <a class="project-title" href="https://github.com/meetshamir/money-genie" target="_blank"><i class="bi bi-cash-coin icon-green"></i> MoneyGenie</a>
+                <div class="project-desc">AI-powered personal finance assistant</div>
+            </div>
+            
+            <!-- Speaking & Community -->
+            <h2 class="section-header" style="margin-top:15px;">SPEAKING & COMMUNITY <i class="bi bi-megaphone-fill icon-purple"></i></h2>
+            <div style="font-size:12px; margin-bottom:15px;">
+                <div style="margin-bottom:8px;"><i class="bi bi-fire icon-orange"></i> <strong>Microsoft Ignite</strong> – Booth duty & demos</div>
+                <div style="margin-bottom:8px;"><i class="bi bi-code-slash icon-blue"></i> <strong>.NET Day Sessions</strong> – <a href="https://www.youtube.com/watch?v=Kx_6SB-mhgg&t=5s" target="_blank">Watch on YouTube</a></div>
+                <div style="margin-bottom:8px;"><i class="bi bi-pencil-square icon-teal"></i> <strong>Azure SRE Agent Blog</strong> – <a href="https://aka.ms/sreagent/blog" target="_blank">aka.ms/sreagent/blog</a></div>
+                <div style="margin-bottom:8px;"><i class="bi bi-youtube icon-red"></i> <strong>YouTube</strong> – <a href="https://www.youtube.com/@AzureSREAgent" target="_blank">@AzureSREAgent</a></div>
+                <div style="margin-bottom:8px;"><i class="bi bi-people-fill icon-green"></i> <strong>Sessions, Hackathons, Workshops</strong></div>
+            </div>
+            
+            <h2 class="section-header">AWARDS <i class="bi bi-trophy-fill" style="color:#f1c40f;"></i></h2>
+            <div class="award">
+                <div class="award-title">▸ Advise Me Ambassador Lead Award</div>
+                <div class="award-desc">Best Ambassador Lead in CSS Advise Me program</div>
+            </div>
+            <div class="award">
+                <div class="award-title">▸ CSS Impact Awards - Team Winner</div>
+                <div class="award-desc">Storytelling program celebrating diversity</div>
+            </div>
+            <div class="award">
+                <div class="award-title">▸ CSS Ambassador Team & Individual</div>
+                <div class="award-desc">Actualizing customer potential</div>
+            </div>
+            <div class="award">
+                <div class="award-title">▸ ACE Star Escalation/TL Award</div>
+                <div class="award-desc">Best Escalation Engineer (2x), Best TL (2x), Best Team</div>
+            </div>
+            <div class="award">
+                <div class="award-title">▸ Best Win 8 App</div>
+                <div class="award-desc">Best app for Windows 8 across CSS</div>
+            </div>
+            <div class="award">
+                <div class="award-title">▸ Most Promising New Comer</div>
+                <div class="award-desc">Computer Associates</div>
+            </div>
+            
+            <h2 class="section-header">INTERESTS <i class="bi bi-heart-fill icon-red"></i></h2>
+            <div class="interests-container">
+                <span class="interest-tag">Hate Idling</span>
+                <span class="interest-tag">Love Technology</span>
+                <span class="interest-tag">Community Work</span>
+                <span class="interest-tag">Empower Children</span>
+                <span class="interest-tag">Movies and TV</span>
+                <span class="interest-tag">Soccer, Volleyball</span>
+                <span class="interest-tag">Badminton, Xbox</span>
+                <span class="interest-tag">Technical Sessions</span>
+            </div>
+            
+
+        </div>
+    </div>
+</body>
+</html>
