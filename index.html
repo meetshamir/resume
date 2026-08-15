@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shamir Abdul Aziz — Agentic AI Builder · ZeroOps Pioneer</title>
     <meta name="description" content="Shamir Abdul Aziz — Principal Product Manager at Microsoft Core AI. Agentic AI builder. ZeroOps pioneer. Speaker on agentic AI, ZeroOps, and agentic coding.">
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         :root {
@@ -82,6 +83,32 @@
             max-width: 720px;
         }
         .hero .bio strong { color: var(--ink); }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .hero-action {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 22px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid var(--azure-blue);
+        }
+        .hero-action-primary {
+            background: var(--azure-blue);
+            color: var(--white) !important;
+        }
+        .hero-action-secondary {
+            background: var(--white);
+            color: var(--azure-deep) !important;
+        }
+        .hero-action:hover {
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,120,212,0.16);
+        }
         .hero-photo {
             width: 220px;
             height: 220px;
@@ -92,12 +119,10 @@
             justify-self: end;
         }
         .hero-photo img {
-            width: 130%;
-            height: 130%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            object-position: center top;
-            margin-left: -15%;
-            margin-top: -5%;
+            object-position: center;
         }
 
         /* CONTACT BAR */
@@ -165,12 +190,88 @@
             line-height: 1.7;
             color: rgba(255,255,255,0.95);
         }
+        .building-card a {
+            display: inline-block;
+            margin-top: 18px;
+            color: var(--white);
+            font-weight: 700;
+        }
+        .feature-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .feature-actions a {
+            margin-top: 0;
+            padding: 9px 16px;
+            border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        .feature-actions a:first-child {
+            background: var(--white);
+            color: var(--azure-deep);
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 26px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,0.25);
+        }
+        .metric-card {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 9px;
+            padding: 15px 13px;
+        }
+        .metric-card .metric-value {
+            display: block;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+        .metric-card .metric-label {
+            color: rgba(255,255,255,0.86);
+            font-size: 10px;
+            line-height: 1.4;
+        }
 
         /* STORIES GRID */
         .stories-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 22px;
+        }
+        .flagship-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        .flagship-secondary {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 22px;
+        }
+        .agentic-feature {
+            display: grid;
+            grid-template-columns: 1fr 180px;
+            gap: 28px;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 70%);
+        }
+        .agentic-feature-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--azure-blue);
+            box-shadow: 0 7px 20px rgba(0,120,212,0.14);
         }
         .story-featured {
             grid-column: 1 / -1;
@@ -219,6 +320,32 @@
             font-size: 13px;
             color: var(--azure-deep);
             font-weight: 600;
+        }
+        .card-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        .card-link.agentic-feature {
+            display: grid;
+        }
+        .card-link:hover {
+            text-decoration: none;
+        }
+        .card-link .link-cue {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--azure-blue);
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .story-links {
+            margin-top: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .story-links a {
+            margin-right: 12px;
         }
 
         /* SPEAKING TOPICS */
@@ -307,9 +434,13 @@
             border: 1px solid var(--line);
             border-radius: 8px;
             padding: 18px 20px;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
         }
-        .project:hover { border-color: var(--azure-blue); }
+        .project:hover {
+            border-color: var(--azure-blue);
+            box-shadow: 0 5px 16px rgba(0,120,212,0.1);
+            transform: translateY(-2px);
+        }
         .project h4 {
             font-size: 15px;
             color: var(--azure-blue);
@@ -421,7 +552,8 @@
             .hero h1 { font-size: 32px; }
             .contact-bar { padding: 14px 24px; gap: 16px; }
             section, .cta { padding: 36px 24px; }
-            .stories-grid, .topics-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+            .stories-grid, .flagship-grid, .flagship-secondary, .topics-grid, .skills-grid, .projects-grid, .metrics-grid, .agentic-feature { grid-template-columns: 1fr; }
+            .agentic-feature-image { justify-self: center; }
             .patents-card { grid-template-columns: 1fr; text-align: center; }
         }
     </style>
@@ -437,8 +569,12 @@
                 <div class="role">Principal Product Manager · Microsoft Core AI</div>
                 <div class="tagline">Agentic AI by craft. ZeroOps by outcome.</div>
                 <p class="bio">
-                    Shamir is a Principal Product Manager at Microsoft Core AI who designs and ships <strong>agentic AI products end-to-end</strong> — from concept to code to customer adoption. He helped define and drive the adoption of <strong>Azure SRE Agent</strong>, an end-to-end agentic platform for any kind of operational toil, and personally builds tools like <strong>Docify</strong> (end-to-end agentic documentation) and <strong>CaseAI</strong> (automated insights and recommendations to improve product supportability). His focus: building the agents that move enterprises toward <strong>ZeroOps</strong> — where production systems detect, diagnose, and resolve issues without humans in the loop.
+                    Shamir is a Principal Product Manager at Microsoft Core AI working at the intersection of <strong>product, engineering, and storytelling</strong>. A builder by instinct and product leader by craft, he turns agentic ideas into working systems, customer outcomes, and stories that move people to act. He helped shape and scale <strong>Azure SRE Agent</strong> and now focuses on <strong>ZeroOps</strong>: governed, monitored, and self-improving operations where agents do the work and humans set the intent.
                 </p>
+                <div class="hero-actions">
+                    <a class="hero-action hero-action-primary" href="https://bookings.cloud.microsoft/bookwithme/user/133d3b269c3f4177b485158370548391@microsoft.com?anonymous&amp;ismsaljsauthenabled&amp;ep=bwmEmailSignature" target="_blank"><i class="bi bi-calendar-check-fill"></i> &nbsp;Book time with me</a>
+                    <a class="hero-action hero-action-secondary" href="https://www.linkedin.com/in/shamir-abdul-aziz-5a071622/" target="_blank"><i class="bi bi-linkedin"></i> &nbsp;Connect on LinkedIn</a>
+                </div>
             </div>
             <div class="hero-photo">
                 <img src="shamir_photo.png" alt="Shamir Abdul Aziz">
@@ -454,71 +590,152 @@
             <span><i class="bi bi-newspaper"></i> <a href="https://www.linkedin.com/newsletters/7406066302014070784/" target="_blank">Musings of an AI PM</a></span>
         </div>
 
-        <!-- PRODUCTS I'VE BUILT & SHAPED -->
+        <!-- ZEROOPS & AZURE SRE AGENT -->
         <section>
-            <div class="section-eyebrow">Products I've built &amp; shaped</div>
-            <h2 class="section-title">Where the work has <span class="accent">landed</span>.</h2>
-            <div class="stories-grid">
-
-                <div class="story story-featured">
-                    <span class="story-tag">Workshops · Competitive Pitches · Enterprise ZeroOps</span>
-                    <h3>Putting ZeroOps in the hands of the biggest enterprises in the world.</h3>
-                    <p>
-                        I lead design workshops and competitive pitches that put ZeroOps into the hands of some of the biggest enterprises in the world — from <strong>utilities to airlines to global SaaS leaders</strong>. We don't just pitch ZeroOps. We implement it — live, on the customer's own toil and production issues, with Azure SRE Agent.
-                    </p>
-                    <div class="impact">→ Competitive wins · Hands-on pilots · Multi-million-dollar cloud adjacencies</div>
+            <div class="section-eyebrow">ZeroOps &amp; Azure SRE Agent</div>
+            <div class="building-card">
+                <span class="label">VISION · PLATFORM · ENTERPRISE TRANSFORMATION</span>
+                <h3>Building the path from operational toil to ZeroOps.</h3>
+                <p>
+                    I helped shape <strong>Azure SRE Agent</strong> from an early troubleshooting thesis into an end-to-end agentic platform for operational work. The bigger mission is ZeroOps: agents continuously monitor, investigate, explain, mitigate, and learn — while humans govern intent, policy, safety, and outcomes.
+                </p>
+                <p style="margin-top:14px;">
+                    I now take that operating model into enterprises through hands-on workshops. Within weeks, teams can move from a production-toil scenario to a <strong>governed, monitored, measurable, and self-improving agentic practice</strong>.
+                </p>
+                <div class="feature-actions">
+                    <a href="https://azure.microsoft.com/en-us/products/sre-agent" target="_blank">Explore Azure SRE Agent →</a>
+                    <a href="https://www.linkedin.com/pulse/zero-ops-agents-operate-humans-govern-shamir-abdul-aziz-jcpic/?trackingId=uDOjx7c9Q2Oypc5QvsFhgQ%3D%3D" target="_blank">Read the ZeroOps perspective →</a>
                 </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">13K+</span>
+                        <span class="metric-label">agents actively running threads across Microsoft and customers</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">6.7K+</span>
+                        <span class="metric-label">active customer-side agents — near parity with internal scale</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">6M+</span>
+                        <span class="metric-label">agent threads in the last 90 days</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- FLAGSHIP AGENTIC PRODUCTS -->
+        <section>
+            <div class="section-eyebrow">Flagship Agentic Products</div>
+            <h2 class="section-title">Products that turn agentic ideas into <span class="accent">complete experiences</span>.</h2>
+            <a class="story card-link agentic-feature" href="https://www.youtube.com/@Agentic-Conversations" target="_blank">
+                <div>
+                    <span class="story-tag">Agentic Conversations · Agentic Studio</span>
+                    <h3>An AI-explains-AI visual podcast — and the AI-native studio behind it.</h3>
+                    <p>
+                        Ellem and Selma unpack how AI actually works, with my human Field Notes connecting the technology to product and enterprise reality. The show is built by Agentic Studio: one engine that scripts, validates, creates art and motion, generates voices, renders, publishes, and promotes complete visual episodes.
+                    </p>
+                    <div class="impact">→ One engine · Many brands · Human approval gates · End-to-end production</div>
+                    <span class="link-cue">Watch Agentic Conversations →</span>
+                </div>
+                <img class="agentic-feature-image" src="agentic-conversations-trio.png" alt="Ellem, Selma, and Shamir from Agentic Conversations">
+            </a>
+
+            <div class="flagship-secondary">
                 <div class="story">
                     <span class="story-tag">Docify · Agentic Documentation</span>
-                    <h3>Docify: documentation that ships when your features do.</h3>
+                    <h3>Documentation that ships when your features do.</h3>
                     <p>
-                        End-to-end agentic documentation — from source code and release management, <strong>without a single prompt</strong>. Release notes, feature docs, GIF-powered tutorials, doodle-style concept videos, and marketing videos — all created agentically.
+                        End-to-end agentic documentation from source code and release management — release notes, feature docs, GIF tutorials, concept videos, and marketing content — created without manual prompting.
                     </p>
-                    <div class="impact">→ Documentation that's always up to date and instant — released the moment your features ship</div>
+                    <div class="impact">→ Always current · Multi-format · Released with the product</div>
                 </div>
 
                 <div class="story">
-                    <span class="story-tag">Azure SRE Agent · Vision · Platform</span>
-                    <h3>Helped shape the vision of Azure SRE Agent.</h3>
+                    <span class="story-tag">CaseAI · Self-serve Product Insights</span>
+                    <h3>Turn support backlogs into product intelligence in minutes.</h3>
                     <p>
-                        Helped shape the vision of <strong>Azure SRE Agent</strong> — Microsoft's end-to-end agentic platform for any kind of operational toil — and helped take it from an early thesis to one of Microsoft's flagship agentic products. Built coalition through prototypes, demos, and relentless adoption work.
+                        A zero-onboarding agentic application that analyzes support cases, finds themes and root-cause paths, surfaces engineering escalations, and generates recommendations that improve product quality and supportability.
                     </p>
-                    <div class="impact">→ 100s of engineering teams · 2,000+ agents deployed internally · 1,000+ customers externally</div>
+                    <div class="impact">→ 1M+ tickets analyzed · 150+ Microsoft products</div>
                 </div>
+            </div>
+        </section>
 
+        <!-- SPEAKING & WORKSHOPS -->
+        <section>
+            <div class="section-eyebrow">Speaking &amp; Workshops</div>
+            <h2 class="section-title">From public stages to <span class="accent">enterprise transformation</span>.</h2>
+            <div class="flagship-grid">
                 <div class="story">
-                    <span class="story-tag">CaseAI · Self-serve Agentic Insights</span>
-                    <h3>CaseAI: turn a backlog of support tickets into product insights — in minutes.</h3>
+                    <span class="story-tag">Conferences · Universities · Developer Audiences</span>
+                    <h3>Sessions that make agentic AI practical.</h3>
                     <p>
-                        CaseAI is a <strong>self-serve agentic application</strong> that analyzes customer support tickets using OpenAI and generates actionable insights to drive product quality and supportability improvements. <strong>Zero onboarding cost</strong>, no configuration, no prompting required — instantly onboard any new product. Explore trends by support topic, root-cause paths, or AI-generated problem areas. Analyze up to <strong>200 cases in under 5 minutes</strong>, and surface engineering escalations instantly.
+                        Speaker at the UC Berkeley Agentic AI Summit, Azure Friday, .NET Day, Analytics Frontier Conference, Microsoft Reactor, and Microsoft's AI Transformation session with Amanda Silver and Jeff Hollan — translating agentic systems and ZeroOps into concrete architectures, operating models, and demos.
                     </p>
-                    <div class="impact">→ 1M+ tickets analyzed across 150+ Microsoft products</div>
+                    <div class="story-links">
+                        <a href="https://luma.com/agentic-ai-summit" target="_blank">Berkeley →</a>
+                        <a href="https://youtu.be/06j-d0gsREw" target="_blank">Azure Friday →</a>
+                        <a href="https://www.youtube.com/watch?v=Kx_6SB-mhgg&amp;t=5s" target="_blank">.NET Day →</a>
+                        <a href="https://info.microsoft.com/ww-ondemand-microsoft-ai-transformation-with-agentic-devops-and-compute.html?lcid=en-us" target="_blank">AI Transformation session →</a>
+                    </div>
                 </div>
-
                 <div class="story">
-                    <span class="story-tag">Executive Briefings</span>
-                    <h3>From the EBC to the boardroom.</h3>
+                    <span class="story-tag">Executive Briefings · Cross-industry Strategy</span>
+                    <h3>Helping leaders move from AI ambition to an operating model.</h3>
                     <p>
-                        Speaker at the <strong>Microsoft Executive Briefing Center</strong> on Agentic DevOps — helping Fortune 500 leaders translate agentic AI from buzzword to strategy. Engagements with major airlines, financial services, and global solution-integration partners.
+                        Microsoft Executive Briefing speaker for leaders across aviation, utilities, financial services, global SaaS, analytics, and solution integration. Recognized with the <strong>FY26 Experience Center One Rising Star Award</strong> for customer impact and growth as a speaker.
                     </p>
-                    <div class="impact">→ Multiple POCs and contracts initiated from briefing-room conversations</div>
+                    <div class="impact">→ Executive alignment · Trusted conversations · POCs and opportunities</div>
                 </div>
+                <div class="story">
+                    <span class="story-tag">ZeroOps Workshops · Hands-on Transformation</span>
+                    <h3>From one production scenario to a standing agentic practice.</h3>
+                    <p>
+                        Workshops go beyond demos. Teams use their own operational toil to build real agents, then establish the governance, monitoring, measurement, and feedback loops needed for those agents to improve and remain on duty.
+                    </p>
+                    <div class="impact">→ Governed · Monitored · Measurable · Self-improving</div>
+                </div>
+            </div>
+        </section>
 
+        <!-- LABS & BUILDS -->
+        <section>
+            <div class="section-eyebrow">SRE Agent Labs &amp; Builds</div>
+            <h2 class="section-title">Working systems built to <span class="accent">teach, prove, and inspire</span>.</h2>
+            <div class="projects-grid">
+                <a class="project card-link" href="https://github.com/microsoft/sre-agent/tree/main/labs/zava-learning" target="_blank">
+                    <h4><i class="bi bi-mortarboard-fill"></i> Zava Learning SRE Agent Lab</h4>
+                    <p>End-to-end online-learning platform where Azure SRE Agent diagnoses and remediates planted production faults across application, network, incident, and change-management systems.</p>
+                    <span class="link-cue">Open enterprise repository →</span>
+                </a>
+                <a class="project card-link" href="https://github.com/meetshamir/zavapl-lab" target="_blank">
+                    <h4><i class="bi bi-lightning-charge-fill"></i> PowerGrid ZeroOps Lab</h4>
+                    <p>Open-source utility platform built to demonstrate agents diagnosing and resolving operational failures autonomously.</p>
+                    <span class="link-cue">Explore the lab →</span>
+                </a>
+                <div class="project">
+                    <h4><i class="bi bi-magic"></i> DemoGenie</h4>
+                    <p>Agentic product-marketing system that turns screenshots and walkthroughs into scripted, narrated, visually polished videos in minutes.</p>
+                </div>
+                <a class="project card-link" href="https://github.com/meetshamir/dj-genie" target="_blank">
+                    <h4><i class="bi bi-music-note-beamed"></i> DJ-Genie</h4>
+                    <p>AI video jockey that creates culture-aware party mixes with intelligent song selection, seamless transitions, visuals, and generated DJ commentary.</p>
+                    <span class="link-cue">Explore DJ-Genie →</span>
+                </a>
             </div>
         </section>
 
         <!-- PATENTS -->
         <section>
-            <div class="section-eyebrow">Patent Portfolio</div>
-            <h2 class="section-title">Inventions in <span class="accent">agentic AI and autonomous operations</span>.</h2>
+            <div class="section-eyebrow">Patent Recognition</div>
+            <h2 class="section-title">Inventing for <span class="accent">autonomous cloud operations</span>.</h2>
             <div class="patents-card">
                 <div>
-                    <div class="count" style="font-size:34px; letter-spacing:0.5px;">Multiple</div>
-                    <div class="count-label">Patent Applications · Under Review</div>
+                    <div class="count" style="font-size:34px; letter-spacing:0.5px;">Filed</div>
+                    <div class="count-label">Microsoft Patent Application · Co-inventor</div>
                 </div>
                 <div class="body">
-                    Across <strong>agentic AI, autonomous operations, AI-generated media, and human-AI collaboration</strong> — including recent filings in agentic AI for autonomous IT operations. Applications currently under consideration; several of the underlying inventions already power Microsoft products today.
+                    Co-inventor on a Microsoft patent application filed in May 2026 covering innovations in <strong>semantic causal reasoning and autonomous cloud diagnostics</strong>. Additional inventions across agentic AI, autonomous operations, and AI-native content systems are under review and awaiting patenting decisions.
                 </div>
             </div>
         </section>
@@ -546,10 +763,10 @@
             </div>
         </section>
 
-        <!-- TALKS & PRESS -->
+        <!-- MEDIA & WRITING -->
         <section>
-            <div class="section-eyebrow">Selected Talks & Press</div>
-            <h2 class="section-title">Where I've shown up <span class="accent">on stage and on the page</span>.</h2>
+            <div class="section-eyebrow">Media &amp; Writing</div>
+            <h2 class="section-title">Watch, read, and <span class="accent">go deeper</span>.</h2>
             <ul class="talks-list">
                 <li>
                     <i class="bi bi-broadcast-pin"></i>
@@ -564,26 +781,6 @@
                     <span><strong>Customer Zero Blog — How we build and use Azure SRE Agent with agentic workflows</strong> · Microsoft Tech Community. <a href="https://techcommunity.microsoft.com/blog/appsonazureblog/how-we-build-and-use-azure-sre-agent-with-agentic-workflows/4508753" target="_blank">Read the post →</a></span>
                 </li>
                 <li>
-                    <i class="bi bi-mic-fill"></i>
-                    <span><strong>Microsoft Executive Briefing Center</strong> — Speaker on Agentic DevOps. Engagements with major airlines, financial services, and global SI partners.</span>
-                </li>
-                <li>
-                    <i class="bi bi-easel-fill"></i>
-                    <span><strong>Analytics Frontier Conference</strong> · Charlotte, NC · Apr 22, 2026 — Conference talk on agentic AI for operations to an analytics &amp; finance audience.</span>
-                </li>
-                <li>
-                    <i class="bi bi-broadcast"></i>
-                    <span><strong>Azure Friday</strong> — Featured demo: Azure SRE Agent as an end-to-end agentic platform for operational toil. <a href="https://youtu.be/06j-d0gsREw" target="_blank">Watch the episode →</a></span>
-                </li>
-                <li>
-                    <i class="bi bi-fire"></i>
-                    <span><strong>Microsoft Ignite</strong> — Booth presence and demos for agentic AI products.</span>
-                </li>
-                <li>
-                    <i class="bi bi-youtube"></i>
-                    <span><strong>.NET Day</strong> — SRE performance demo. <a href="https://www.youtube.com/watch?v=Kx_6SB-mhgg&t=5s" target="_blank">Watch on YouTube →</a></span>
-                </li>
-                <li>
                     <i class="bi bi-pencil-square"></i>
                     <span><strong>Azure SRE Agent Blog</strong> — Contributing author. <a href="https://aka.ms/sreagent/blog" target="_blank">aka.ms/sreagent/blog</a></span>
                 </li>
@@ -594,10 +791,6 @@
                 <li>
                     <i class="bi bi-youtube"></i>
                     <span><strong>YouTube</strong> — <a href="https://www.youtube.com/@AzureSREAgent" target="_blank">@AzureSREAgent</a> — product demos, tutorials, and agentic-AI walkthroughs.</span>
-                </li>
-                <li>
-                    <i class="bi bi-lightning-charge-fill"></i>
-                    <span><strong>PowerGrid ZeroOps Lab</strong> — open-source ZeroOps demo for utilities. <a href="https://github.com/meetshamir/zavapl-lab" target="_blank">Lab repo →</a></span>
                 </li>
             </ul>
         </section>
@@ -655,46 +848,6 @@
             </div>
         </section>
 
-        <!-- SIDE PROJECTS -->
-        <section>
-            <div class="section-eyebrow">Side Projects</div>
-            <h2 class="section-title">Things I build <span class="accent">on the weekends</span>.</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <h4><i class="bi bi-music-note-beamed"></i> <a href="https://github.com/meetshamir/dj-genie" target="_blank">DJ-Genie</a></h4>
-                    <p>AI-powered video DJ playlist creator with Azure OpenAI voice.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-tools"></i> <a href="https://github.com/meetshamir/ai-pm-toolkit" target="_blank">AI-PM-Toolkit</a></h4>
-                    <p>Open collection of AI prompts and agents for Product Managers — vibe coding included.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-cash-coin"></i> <a href="https://github.com/meetshamir/money-genie" target="_blank">MoneyGenie</a></h4>
-                    <p>AI-powered personal finance assistant.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-magic"></i> DemoGenie</h4>
-                    <p>Screenshots → narrated marketing videos in minutes. Under $0.15 per 3-min video.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-lightning-charge-fill"></i> <a href="https://github.com/meetshamir/zavapl-lab" target="_blank">PowerGrid ZeroOps Lab</a></h4>
-                    <p>Open-source utility-portal lab — break it, watch agents diagnose and fix it autonomously.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-broadcast"></i> <a href="https://youtu.be/06j-d0gsREw" target="_blank">Azure Friday Episode</a></h4>
-                    <p>End-to-end agentic platform for operational toil across any system.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-code-slash"></i> <a href="https://github.com/meetshamir/dotnetday" target="_blank">.NET Day Demo</a></h4>
-                    <p>SRE performance demo built for the .NET Day session.</p>
-                </div>
-                <div class="project">
-                    <h4><i class="bi bi-newspaper"></i> <a href="https://www.linkedin.com/newsletters/7406066302014070784/" target="_blank">Musings of an AI PM</a></h4>
-                    <p>LinkedIn newsletter — insights on AI, product management, and building things that matter.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA -->
         <section class="cta">
             <h2>Bring me in.</h2>
@@ -702,11 +855,14 @@
                 I speak to executive audiences, university programs, and developer conferences on agentic AI, ZeroOps, and the new craft of building with agents. Workshops, keynotes, and executive briefings available.
             </p>
             <div class="cta-buttons">
-                <a class="cta-btn cta-btn-primary" href="mailto:meetshamir@live.com?subject=Speaker%20inquiry%20%E2%80%94%20Shamir%20Abdul%20Aziz">
-                    <i class="bi bi-envelope-fill"></i> &nbsp;Book me to speak
+                <a class="cta-btn cta-btn-primary" href="https://bookings.cloud.microsoft/bookwithme/user/133d3b269c3f4177b485158370548391@microsoft.com?anonymous&amp;ismsaljsauthenabled&amp;ep=bwmEmailSignature" target="_blank">
+                    <i class="bi bi-calendar-check-fill"></i> &nbsp;Book time with me
                 </a>
                 <a class="cta-btn cta-btn-secondary" href="https://www.linkedin.com/in/shamir-abdul-aziz-5a071622/" target="_blank">
                     <i class="bi bi-linkedin"></i> &nbsp;Connect on LinkedIn
+                </a>
+                <a class="cta-btn cta-btn-secondary" href="shamir_photo.png" download>
+                    <i class="bi bi-download"></i> &nbsp;Download headshot
                 </a>
             </div>
         </section>
